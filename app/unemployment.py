@@ -1,15 +1,23 @@
+#IMPORTS
 import os
-from dotenv import load_dotenv
+import json
+from pprint import pprint
+from statistics import mean
 
+import requests
+from dotenv import load_dotenv
+from plotly.express import line
+
+#ENVIROMENT VARIABLES AND CONSTANTS
 load_dotenv()
 
 API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
 
+#Use Breakpoint to troubleshoot
+#breakpoint()
+#quit() breaks at quit point, no ability to trouble shoot in terminal
 
-import requests
-import json
-from pprint import pprint
-
+#FUNCTIONS
 request_url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={API_KEY}"
 
 response = requests.get(request_url)
@@ -37,7 +45,6 @@ print(f"{data[0]['value']}%", "as of", data[0]["date"])
 # What is the average unemployment rate for all months during this calendar year?
 # ... How many months does this cover?
 
-from statistics import mean
 
 this_year = [d for d in data if "2023-" in d["date"]]
 
@@ -52,7 +59,7 @@ print("NO MONTHS:", len(this_year))
 #
 # Plot a line chart of unemployment rates over time.
 
-from plotly.express import line
+
 
 dates = [d["date"] for d in data]
 rates = [float(d["value"]) for d in data]
