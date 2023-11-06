@@ -21,13 +21,20 @@ You must first follow the [setup instructions](https://github.com/prof-rossetti/
 Run the Example Script:
 
 ```sh 
-python app/my_script.py
+python -m app.my_script
 ```
 Run the Unemployment report:
 ```sh
-python app/unemployment.py
+python -m app.unemployment
 ```
 Send an email:
 ```sh
-python app/email-service.py
+python -m app.email-service
+```
+## Testing
+
+Run tests:
+
+```sh
+pytest
 ```
