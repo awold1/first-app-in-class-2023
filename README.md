@@ -29,7 +29,7 @@ python -m app.unemployment
 ```
 Send an email:
 ```sh
-python -m app.email-service
+python -m app.email_service
 ```
 ## Testing
 
