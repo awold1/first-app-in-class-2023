@@ -4,4 +4,10 @@ requests
 plotly
 pandas
 python-dotenv
+<<<<<<< Updated upstream:requirement.txt
 sendgrid==6.5.0
+=======
+sendgrid==6.5.0
+flask
+pgeocode
+>>>>>>> Stashed changes:requirements.txt
