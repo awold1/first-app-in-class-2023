@@ -3,6 +3,7 @@ import requests
 import json
 from IPython.display import Image, display
 
+
 def display_forecast(zip_code, country_code="US"):
     """
     Displays a seven day weather forecast for the provided zip code.
@@ -14,7 +15,7 @@ def display_forecast(zip_code, country_code="US"):
         zip_code (str) a valid US zip code, like "20057" or "06510".
 
     """
-    zip_code = input("Please input a zip code (e.g. '06510'): ") or "06510"
+    
     DEGREE_SIGN = u"\N{DEGREE SIGN}"
     nomi = Nominatim(country_code)
     geo = nomi.query_postal_code(zip_code)
@@ -23,7 +24,6 @@ def display_forecast(zip_code, country_code="US"):
 
     request_url = f"https://api.weather.gov/points/{latitude},{longitude}"
     response = requests.get(request_url)
-    #print(response.status_code)
     parsed_response = json.loads(response.text)
 
     forecast_url = parsed_response["properties"]["forecast"]
@@ -42,3 +42,8 @@ def display_forecast(zip_code, country_code="US"):
         #print(period["detailedForecast"])
         display(Image(url=period["icon"]))
 
+    return(response.status_code)
+
+if __name__ == "__main__":
+    my_zip = input("Please input a zip code (e.g. '06510'): ")
+    display_forecast(my_zip)
