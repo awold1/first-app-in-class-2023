@@ -1,0 +1,8 @@
+#this is the "requirement.txt" file...
+
+requests
+plotly
+pandas
+python-dotenv
+flask
+pgeocode
