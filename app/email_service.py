@@ -31,8 +31,9 @@ def send_email(recipient_address=MAILGUN_SENDER_ADDRESS, subject="[Shopping Cart
             data=message_data
         )
         print("RESULT:", response.status_code)
-        response.raise_for_status()
+        #response.raise_for_status()
         print("Email sent successfully!")
+        return(response.status_code)
     except requests.exceptions.RequestException as e:
         print(f"Error sending email: {str(e)}")
 
