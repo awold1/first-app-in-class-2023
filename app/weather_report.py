@@ -1,7 +1,7 @@
 from pgeocode import Nominatim
 import requests
 import json
-
+from IPython.display import Image, display
 
 def display_forecast(zip_code, country_code="US"):
     """
@@ -14,7 +14,8 @@ def display_forecast(zip_code, country_code="US"):
         zip_code (str) a valid US zip code, like "20057" or "06510".
 
     """
-
+    zip_code = input("Please input a zip code (e.g. '06510'): ") or "06510"
+    DEGREE_SIGN = u"\N{DEGREE SIGN}"
     nomi = Nominatim(country_code)
     geo = nomi.query_postal_code(zip_code)
     latitude = geo["latitude"]
@@ -40,3 +41,4 @@ def display_forecast(zip_code, country_code="US"):
         print(period["shortForecast"], f"{period['temperature']} {DEGREE_SIGN}{period['temperatureUnit']}")
         #print(period["detailedForecast"])
         display(Image(url=period["icon"]))
+
