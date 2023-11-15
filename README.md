@@ -31,6 +31,10 @@ Send an email:
 ```sh
 python -m app.email-service
 ```
+Run the Weather Report:
+```sh
+python -m app.weather_report
+```
 ## Testing
 
 Run tests:
