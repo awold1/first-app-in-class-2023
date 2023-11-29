@@ -8,3 +8,5 @@ flask
 pgeocode
 pytest
 IPython
+#PRODUCTION SERVER NEEDS THIS TO RUN
+gunicorn
