@@ -9,7 +9,17 @@ conda create -n my-first-env python=3.10
 
 conda activate my-first-env
 ```
+Obtain a MailGun API key 
 
+Create a ".env" file and past in the following contents:
+```
+MAILGUN_API_KEY = "______"
+
+MAILGUN_DOMAIN = "______.mailgun.org"
+
+MAILGUN_SENDER_ADDRESS = "YOUR EMAIL"
+
+```
 ## Install Packages
 ```sh
 pip install -r requirements.txt

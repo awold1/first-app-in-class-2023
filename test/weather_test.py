@@ -4,4 +4,3 @@ def test_display_forecast():
 
     assert display_forecast("06510") == 200
 
-test_display_forecast()
